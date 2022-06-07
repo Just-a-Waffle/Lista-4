@@ -1,0 +1,4 @@
+#!/bin/bash
+A=$(cat names.txt | tr -s ' ')
+B=$(echo "$A" | tr '8' ' ')
+echo "$B" | cut -d ' ' -f 4,5
