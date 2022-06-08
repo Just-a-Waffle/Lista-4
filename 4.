@@ -1,4 +1,2 @@
 #!/bin/bash
-echo 'qual arquivo?'
-read -p ':' arq
-echo '**!!CEN-SU-RA-DO!!**' > $arq
+nope
