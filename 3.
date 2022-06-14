@@ -1,0 +1,25 @@
+#!/bin/bash
+file=0
+while [ "$answer" != "q" ];do
+        echo -e "O que deve ser feito? \n[r] escolher um arquivo para ser processado. \n[a] Remover todas as letras do arquivo. \n[b] Remover todos o>
+        read -p ":" answer
+        if [ "$answer" = "r" ];then
+                echo digite o nome do arquivo para ser processado.
+                read -p ":" file
+        elif [ "$answer" = "a" ];then
+                if [ "$file" = "0" ];then
+                        echo 'Escolha um arquivo para ser processado antes!'
+                else sed -i 's/[abcdefghijklmnopqrstuvwxyz]//g' $file
+                fi
+        elif [ "$answer" = "b" ];then
+                if [ "$file" = "0" ];then
+                        echo 'Escolha um arquivo para ser processado antes!'
+                else sed -i 's/[0123456789]//g' $file
+                fi
+        elif [ "$answer" = "c" ];then
+                if [ "$file" = "0" ];then
+                        echo 'Escolha um arquivo para ser processado antes!'
+                else sed -i 's/[^a-zA-Z0-9]/$/g' $file
+                fi
+        fi
+done
